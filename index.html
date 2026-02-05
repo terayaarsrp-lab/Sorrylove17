@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+}
+
+/* Romantic blurred background */
+.bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffc3a0);
+    filter:blur(12px);
+    z-index:-3;
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:22px;
+    animation:float 10s linear infinite;
+    opacity:0.8;
+    z-index:-1;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);opacity:0;}
+    20%{opacity:1;}
+    100%{transform:translateY(-120vh);opacity:0;}
+}
+
+/* Card */
+.card{
+    background:rgba(255,255,255,0.95);
+    width:90%;
+    max-width:600px;
+    border-radius:25px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 25px 50px rgba(0,0,0,0.3);
+}
+
+/* Smaller photo */
+.card img{
+    width:75%;
+    max-height:300px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Text */
+.text{
+    font-size:19px;
+    color:#d6336c;
+    margin:20px 0;
+    line-height:1.5;
+}
+
+/* Button */
+button{
+    background:linear-gradient(135deg,#ff5f9e,#ff8fa3);
+    border:none;
+    color:white;
+    padding:12px 30px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- MANY floating love emojis -->
+<span class="heart" style="left:5%;animation-delay:0s">❤️</span>
+<span class="heart" style="left:10%;animation-delay:2s">💖</span>
+<span class="heart" style="left:18%;animation-delay:4s">💕</span>
+<span class="heart" style="left:26%;animation-delay:1s">💘</span>
+<span class="heart" style="left:34%;animation-delay:3s">💞</span>
+<span class="heart" style="left:42%;animation-delay:5s">🌹</span>
+<span class="heart" style="left:50%;animation-delay:2s">❤️‍🔥</span>
+<span class="heart" style="left:58%;animation-delay:4s">💗</span>
+<span class="heart" style="left:66%;animation-delay:1s">💝</span>
+<span class="heart" style="left:74%;animation-delay:3s">🌸</span>
+<span class="heart" style="left:82%;animation-delay:5s">💓</span>
+<span class="heart" style="left:90%;animation-delay:2s">❤️</span>
+
+<div class="card">
+    <img id="photo" src="photo1.jpg">
+    <div class="text" id="line">
+        ❤️ Jab tum Smile karti ho, Me bata nahi sakta mujhe andar tak kitni khushi milti hai🥹
+    </div>
+    <button onclick="nextPage()">Next ➡️</button>
+</div>
+
+<script>
+let page = 1;
+
+const photos = [
+"photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg","photo5.jpg",
+"photo6.jpg","photo7.jpg","photo8.jpg","photo9.jpg","photo10.jpg"
+];
+
+const lines = [
+"❤️ Jab tum Smile karti ho, Me bata nahi sakta mujhe andar tak kitni khushi milti hai🥹",
+"💕 Galtiyan ho jati hai, par mera pyaar kabhi kam nahi hua 😘",
+"💖 Tumhare door jane ke ahsas Meri Raato ki neend uda gyi🥺",
+"🌸 Tumhari har khushi ke liye main roj mehnat karta hu, par kabhi bata nahi pata tum kitni zaruri ho😔",
+"💞 Main perfect nahi hoon, par tumse beinteha pyaar karta hoon 🥺",
+"🥺 Tum mere liye 2 saal se bahut kuch kar rahi ho, aur maine tumhare effort ko ignore kiya 💕",
+"💝 Tum meri aadat nahi, meri zarurat ho, Dil se Sorry aur I Love You❤️",
+"🌹 Tumhare bina khush rehna sirf acting hai, main bahut baar fail ho chuka hoon😔",
+"💗 Mera future sirf tumhare saath hi acha lagega, 60 ki umar me fir photos click karenge✨",
+"👑 Mujhse kabhi door mat jana, I really need you ❤️‍🩹"
+];
+
+function nextPage(){
+    page++;
+    if(page > photos.length){
+        alert("❤️ I Love You ❤️");
+        return;
+    }
+    document.getElementById("photo").src = photos[page-1];
+    document.getElementById("line").innerText = lines[page-1];
+}
+</script>
+
+</body>
+</html>
